@@ -7,38 +7,6 @@ maxPoints = 16.0  # defines the maximum achievable points for the example tested
 points = maxPoints  # stores the actually achieved points based on failed unit tests
 summary = ""
 
-
-def deduct_pts(value):
-    global points
-    points = points - value
-    if points < 0:
-        points = 0
-
-
-def resolve_amount_of_pts_to_deduct(argument):
-    pool = {
-        "test_get_value": 1.0,
-        "test_invalid_get_value": 0.25,
-        "test_search_value": 1.0,
-        "test_invalid_search_value": 0.25,
-        "test_insert": 2.0,
-        "test_invalid_insert": 0.25,
-        "test_remove_first": 2.0,
-        "test_no_remove_first": 0.25,
-        "test_invalid_remove_first": 0.25,
-        "test_remove_all": 2.0,
-        "test_no_remove_all": 0.25,
-        "test_invalid_remove_all": 0.25,
-        "test_remove_duplicates": 2.0,
-        "test_filter_n_max": 1.5,
-        "test_invalid_filter_n_max": 0.25,
-        "test_filter_odd": 2.5,
-        "test_filter_even": 2.5,
-    }
-    # resolve the pts to deduct from pool
-    return pool.get(argument, 0)
-
-
 def create_list_from_array(arr):
     head = MyListNode(arr[0]) if arr else None
     old_node = head
